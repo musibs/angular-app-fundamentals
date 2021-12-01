@@ -1,0 +1,20 @@
+<!--<app-server></app-server>-->
+<!--<label>Server Name:</label>-->
+<!--&lt;!&ndash;<input type="text" (input)="onServerNameUpdate($event)" class="form-control"/>&ndash;&gt;-->
+<!--<input type="text" class="form-control" [(ngModel)]="serverName">-->
+
+<!--&lt;!&ndash;<p [innerHtml]="serverName"></p>&ndash;&gt;-->
+
+
+<!--<button [disabled]="!isAllowNewServer" (click)="onCreateNewServer()" class="btn btn-primary">Add Server</button>-->
+<!--&lt;!&ndash;<p [innerHtml]="isAllowNewServer"></p> &ndash;&gt;-->
+<!--<p [innerHtml]="serverCreationStatus"> </p>-->
+
+<p>Servers Component</p>
+<label for="Username" id="username">Username:</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<p *ngIf="username !== ''; else noUserName">Username is {{username}}</p>
+<ng-template #noUserName>
+  <p>No username is set</p>
+</ng-template>
+<button class="btn btn-primary" [disabled]="username === ''" (click)="onButtonClick()">Reset Username</button>
